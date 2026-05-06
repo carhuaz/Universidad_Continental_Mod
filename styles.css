@@ -1,0 +1,368 @@
+/* ===========================
+   Universidad Continental - CSS
+   =========================== */
+
+   :root {
+    --primary:    #0a3d62;
+    --secondary:  #1e6091;
+    --accent:     #f0a500;
+    --accent-dark:#c47f00;
+    --light-bg:   #f4f7fa;
+    --text-dark:  #1a1a2e;
+    --text-muted: #6c757d;
+    --white:      #ffffff;
+    --radius:     14px;
+    --shadow:     0 8px 30px rgba(0,0,0,0.10);
+    --transition: all 0.3s ease;
+  }
+  
+  /* ---- Base ---- */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--text-dark);
+    background: var(--white);
+  }
+  h1, h2, h3 { font-family: 'Playfair Display', serif; }
+  
+  /* ---- Utility ---- */
+  .text-accent  { color: var(--accent) !important; }
+  .btn-accent {
+    background: var(--accent);
+    color: var(--primary);
+    font-weight: 700;
+    border: none;
+    border-radius: 50px;
+    padding: 0.55rem 1.6rem;
+    transition: var(--transition);
+  }
+  .btn-accent:hover {
+    background: var(--accent-dark);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(240,165,0,0.4);
+  }
+  .section-pad { padding: 90px 0; }
+  
+  /* ---- Section Header ---- */
+  .section-tag {
+    display: inline-block;
+    background: rgba(240,165,0,0.15);
+    color: var(--accent-dark);
+    font-weight: 700;
+    font-size: 0.78rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 50px;
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: var(--primary);
+    line-height: 1.2;
+  }
+  .section-sub {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-top: 8px;
+  }
+  
+  /* ---- NAVBAR ---- */
+  #mainNavbar {
+    background: transparent;
+    transition: var(--transition);
+    padding: 18px 0;
+  }
+  #mainNavbar.scrolled {
+    background: var(--primary);
+    padding: 10px 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+  .brand-icon {
+    background: var(--accent);
+    color: var(--primary);
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 900;
+  }
+  .brand-icon.small { width: 28px; height: 28px; font-size: 0.85rem; }
+  .brand-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: var(--white);
+  }
+  .brand-accent { color: var(--accent); }
+  .navbar-nav .nav-link {
+    color: rgba(255,255,255,0.85) !important;
+    font-weight: 500;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    padding: 6px 12px !important;
+    transition: var(--transition);
+  }
+  .navbar-nav .nav-link:hover {
+    color: var(--accent) !important;
+    background: rgba(255,255,255,0.08);
+  }
+  
+  /* ---- HERO ---- */
+  .hero-section {
+    min-height: 100vh;
+    background: url('https://www.ey.com/content/dam/ey-unified-site/ey-com/es-pe/insights/revista-execution/historias/images/ey-universidad-continental-execution.jpg') center/cover no-repeat;
+    position: relative;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(10,61,98,0.92) 0%, rgba(10,61,98,0.6) 100%);
+  }
+  .hero-title {
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    line-height: 1.1;
+    color: var(--white);
+  }
+  .hero-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.8);
+    max-width: 500px;
+    line-height: 1.7;
+  }
+  .badge-hero {
+    background: rgba(240,165,0,0.2);
+    border: 1px solid rgba(240,165,0,0.5);
+    color: var(--accent);
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 50px;
+  }
+  .hero-stats { border-top: 1px solid rgba(255,255,255,0.15); padding-top: 24px; }
+  .stat-item { display: flex; flex-direction: column; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.9rem;
+    font-weight: 900;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.6); margin-top: 2px; }
+  
+  /* ---- CARDS CARRERA ---- */
+  .card-career {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    height: 100%;
+  }
+  .card-career:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(10,61,98,0.18);
+  }
+  .card-career-img {
+    height: 190px;
+    background-size: cover;
+    background-position: center;
+    transition: var(--transition);
+  }
+  .card-career:hover .card-career-img { transform: scale(1.04); }
+  .card-career-body { padding: 24px; }
+  .card-icon {
+    width: 44px; height: 44px;
+    background: rgba(240,165,0,0.12);
+    color: var(--accent-dark);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+  .card-career-body h5 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin-bottom: 8px;
+  }
+  .card-career-body p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
+  .btn-card-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--secondary);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none;
+    margin-top: 14px;
+    transition: var(--transition);
+  }
+  .btn-card-link:hover { color: var(--accent-dark); gap: 10px; }
+  
+  /* ---- NOSOTROS ---- */
+  .about-img-wrap { position: relative; }
+  .about-img {
+    width: 100%;
+    border-radius: var(--radius);
+    object-fit: cover;
+    height: 420px;
+    box-shadow: var(--shadow);
+  }
+  .about-badge {
+    position: absolute;
+    bottom: -18px; left: 30px;
+    background: var(--accent);
+    color: var(--primary);
+    font-weight: 800;
+    padding: 12px 22px;
+    border-radius: 12px;
+    display: flex; align-items: center; gap: 8px;
+    font-size: 0.95rem;
+    box-shadow: 0 8px 24px rgba(240,165,0,0.4);
+  }
+  .feature-box {
+    background: var(--light-bg);
+    border-radius: 12px;
+    padding: 18px;
+    transition: var(--transition);
+  }
+  .feature-box:hover { background: var(--white); box-shadow: var(--shadow); }
+  
+  /* ---- NOTICIAS ---- */
+  .news-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    height: 100%;
+  }
+  .news-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,0.12); }
+  .news-card img {
+    width: 100%; height: 200px;
+    object-fit: cover;
+    transition: var(--transition);
+  }
+  .news-card:hover img { transform: scale(1.04); }
+  .news-body { padding: 20px; }
+  .news-tag {
+    background: rgba(240,165,0,0.15);
+    color: var(--accent-dark);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  .news-body h6 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--primary);
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  .news-date { font-size: 0.78rem; color: var(--text-muted); }
+  .news-date i { margin-right: 4px; }
+  
+  /* ---- CONTACTO ---- */
+  .contact-section {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  }
+  .contact-info-item {
+    display: flex; align-items: center; gap: 12px;
+    color: rgba(255,255,255,0.8);
+    font-size: 0.9rem;
+    margin-bottom: 14px;
+  }
+  .contact-info-item i { color: var(--accent); font-size: 1rem; }
+  .contact-form-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 36px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  }
+  .contact-form-card .form-label {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--primary);
+    margin-bottom: 6px;
+  }
+  .contact-form-card .form-control,
+  .contact-form-card .form-select {
+    border: 2px solid #e8ecf0;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+    transition: var(--transition);
+  }
+  .contact-form-card .form-control:focus,
+  .contact-form-card .form-select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(240,165,0,0.15);
+  }
+  .contact-form-card .form-control.is-valid,
+  .contact-form-card .form-select.is-valid {
+    border-color: #28a745;
+    background-image: none;
+  }
+  .contact-form-card .form-control.is-invalid,
+  .contact-form-card .form-select.is-invalid {
+    border-color: #dc3545;
+    background-image: none;
+  }
+  .contact-form-card .form-check-input:checked { background-color: var(--accent); border-color: var(--accent); }
+  .contact-form-card a { color: var(--accent-dark); font-weight: 600; }
+  
+  /* ---- FOOTER ---- */
+  .footer {
+    background: #040f1e;
+    padding: 60px 0 30px;
+  }
+  .footer-title {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+  .footer-links {
+    list-style: none;
+    padding: 0; margin: 0;
+  }
+  .footer-links li {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.88rem;
+    margin-bottom: 8px;
+  }
+  .footer-links a {
+    color: rgba(255,255,255,0.55);
+    text-decoration: none;
+    transition: var(--transition);
+  }
+  .footer-links a:hover { color: var(--accent); padding-left: 4px; }
+  .footer-hr { border-color: rgba(255,255,255,0.08); margin: 30px 0 20px; }
+  .social-links { display: flex; gap: 10px; }
+  .social-links a {
+    width: 36px; height: 36px;
+    background: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.7);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: var(--transition);
+  }
+  .social-links a:hover { background: var(--accent); color: var(--primary); transform: translateY(-3px); }
+  
+  /* ---- Responsive ---- */
+  @media (max-width: 767px) {
+    .section-pad { padding: 60px 0; }
+    .about-img { height: 280px; }
+    .about-badge { bottom: -14px; left: 16px; font-size: 0.82rem; padding: 10px 16px; }
+    .contact-form-card { padding: 24px 18px; }
+    .hero-stats { gap: 20px; }
+  }
